@@ -21,6 +21,7 @@
     <![endif]-->
 
     <!-- add more custom styling here -->
+    <link href="css/carousel.css" rel="stylesheet">
     <link href="css/report.css" rel="stylesheet">
 
     <!-- end copy from bootstrap -->
@@ -70,51 +71,48 @@
       </div>
     </div>
 
-    <div id="form" class="col-xs-8 col-xs-offset-2">
-      <h1>Report an Issue</h1>
-      <form id="issueForm">
-        <h4>Your Name</h4>
-        <input type="text"
-               name="name"
-               class="form-control"
-               placeholder="Enter Your Name"
-               required>
-        <h4>Your Email Address</h4>
-        <input type="email"
-               name="email"
-               class="form-control"
-               placeholder="Enter Your Email"
-               required>
-        <h4>Subject</h4>
-        <input type="text"
-               name="subject"
-               class="form-control"
-               placeholder="Enter Subject"
-               required>
-        <h4>Message</h4>
-        <textarea name="message"
-                  rows="5"
-                  class="form-control"
-                  placeholder="Enter Your Message"
-                  required></textarea>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-      </form>
+    <div class="row">
+      <div id="form" class="col-xs-8 col-xs-offset-2">
+        <div class="alert-area">
+        </div>
 
-      <div class="alert-area">
+        <h1>Report an Issue</h1>
+
+        <form id="issueForm">
+          <h4>Your Name</h4>
+          <input type="text"
+                 name="name"
+                 class="form-control"
+                 placeholder="Enter Your Name"
+                 required>
+          <h4>Your Email Address</h4>
+          <input type="email"
+                 name="email"
+                 class="form-control"
+                 placeholder="Enter Your Email"
+                 required>
+          <h4>Subject</h4>
+          <input type="text"
+                 name="subject"
+                 class="form-control"
+                 placeholder="Enter Subject"
+                 required>
+          <h4>Message</h4>
+          <textarea name="message"
+                    rows="5"
+                    class="form-control"
+                    placeholder="Enter Your Message"
+                    required></textarea>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </form>
       </div>
-
     </div>
 
-    <div class="col-xs-2">
-    </div>
-
-    <div class="col-xs-12">
-      <!-- FOOTER -->
-    	<footer>
-      	<p class="pull-right"><a href="index.html">Back to top</a></p>
-        <p>&copy; 2016 Five For Biking, IndyGo, B-cycle, LLC. All rights reserved. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    	</footer>
-    </div>
+    <!-- FOOTER -->
+  	<footer>
+    	<p class="pull-right"><a href="index.html">Back to top</a></p>
+      <p>&copy; 2016 Five For Biking, IndyGo, B-cycle, LLC. All rights reserved. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  	</footer>
 
     <!-- PhoneGap core JavaScript -->
     <script type="text/javascript" src="cordova.js"></script>

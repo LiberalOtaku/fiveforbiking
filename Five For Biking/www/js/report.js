@@ -12,15 +12,15 @@ var report = {
   submitForm: function(event) {
     event.preventDefault();
     $.ajax({
-      url: this.url,
+      url: app.url,
       method: 'post',
       contentType: "application/json",
       data: JSON.stringify({
         "issue": {
-          "name": this.form.name.value,
-          "email": this.form.email.value,
-          "subject": this.form.subject.value,
-          "message": this.form.message.value,
+          "name": this.name.value,
+          "email": this.email.value,
+          "subject": this.subject.value,
+          "message": this.message.value,
         }
       }),
       success: function(issue) {
@@ -29,13 +29,13 @@ var report = {
             Report successfully submitted! \
           </div>');
 
-        this.form.reset();
-        this.form.clientName.focus();
+        this.reset();
+        this.name.focus();
       },
       error: function(xhr, status, error) {
         $('div.alert-area').html(' \
           <div class="alert alert-danger" role="alert"> \
-            Oops, something went wrong (Error ' + error + ': ' + status + ')! Please try again later. \
+            Oops, something went wrong (Error ' + status + ': ' + error + ')! Please try again later. \
           </div>');
       }
     });

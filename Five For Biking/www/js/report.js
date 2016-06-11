@@ -16,7 +16,7 @@ var report = {
     var subject = this.form.find('[name="subject"]');
     var message = this.form.find('[name="message"]');
     $.ajax({
-      url: app.url,
+      url: this.url,
       method: 'post',
       contentType: "application/json",
       data: JSON.stringify({

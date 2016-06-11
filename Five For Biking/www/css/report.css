@@ -1,17 +1,13 @@
-h1 {
-  text-align: center;
+h4 {
+  margin-top: 20px;
 }
 
 input, textarea {
   margin-bottom: 24px;
 }
 
-div.alert-area {
-  margin-top: 24px;
-}
-
 div#form {
-  margin-top: 60px;
+  margin-top: 72px;
 }
 
 footer {

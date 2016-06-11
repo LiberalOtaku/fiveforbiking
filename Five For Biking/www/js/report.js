@@ -6,38 +6,37 @@ var report = {
   },
 
   setupEventListeners: function() {
-    this.form.onsubmit = this.submitForm.bind(this);
+    this.form.submit(this.submitForm.bind(this));
   },
 
   submitForm: function(event) {
     event.preventDefault();
+    var name = this.form.find('[name="name"]');
+    var email = this.form.find('[name="email"]');
+    var subject = this.form.find('[name="subject"]');
+    var message = this.form.find('[name="message"]');
     $.ajax({
       url: app.url,
       method: 'post',
       contentType: "application/json",
       data: JSON.stringify({
         "issue": {
-          "name": this.name.value,
-          "email": this.email.value,
-          "subject": this.subject.value,
-          "message": this.message.value,
+          "name": name.val(),
+          "email": email.val(),
+          "subject": subject.val(),
+          "message": message.val(),
         }
       }),
       success: function(issue) {
-        $('div.alert-area').html(' \
-          <div class="alert alert-success" role="alert"> \
-            Report successfully submitted! \
-          </div>');
-
-        this.reset();
-        this.name.focus();
+        alert('Report successfully submitted!');
+        name.val('').focus();
+        email.val('');
+        subject.val('');
+        message.val('');
       },
       error: function(xhr, status, error) {
-        $('div.alert-area').html(' \
-          <div class="alert alert-danger" role="alert"> \
-            Oops, something went wrong (Error ' + status + ': ' + error + ')! Please try again later. \
-          </div>');
-      }
+        alert('Oops, something went wrong (' + status + ': ' + error + ')! Please try again later.');
+      },
     });
   },
 
